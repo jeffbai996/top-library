@@ -33,14 +33,14 @@ function handleSubmit() {
     printBooks();
 }
 
-// get book-list unordered list element
-const bookList = document.getElementById("book-list")
+// get book-list container
+const bookList = document.getElementById("book-list-container")
 
 // function to update book list element with each submit
 function printBooks() {
     bookList.innerHTML = ""; 
     myLibrary.forEach((book) => {
-        let html = `<li>${book.title}, by ${book.author}, ${book.pages} pages, ${book.read}</li>`;
+        let html = `<div>${book.title}, by ${book.author}, ${book.pages} pages, ${book.read}</div>`;
         bookList.innerHTML += html;
     })
 }
