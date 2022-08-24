@@ -23,3 +23,11 @@ body {
 #main-content {
   flex: 3;
 }
+
+#header {
+  text-align: center;
+}
+
+#book-list-container {
+  display: grid;
+}
