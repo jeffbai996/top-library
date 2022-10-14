@@ -13,17 +13,6 @@
         <div id="sidebar">
             <h1>TOP Library</h1>
             <button id="new-book" data-modal="modal-one">Add New Book</button>
-            <form onsubmit="handleSubmit(); return false">
-                <label for="title">Title</label>
-                <input type="text" id="title" name="title" placeholder="Harry Potter">
-                <label for="author">Author</label>
-                <input type="text" id="author" name="author" placeholder="JK Rowling">
-                <label for="pages">Number of Pages</label>
-                <input type="number" id="pages" name="pages" placeholder="100">
-                <label for="read">Have you read the book?</label>
-                <input type="checkbox" id="read" name="read" checked>
-                <input type="submit" value="Submit">
-            </form>
         </div>
         <div id="main-content">
             <div id="header">
@@ -31,9 +20,19 @@
                   <div class="modal" id="modal-one">
                     <div class="modal-bg modal-exit"></div>
                     <div class="modal-container">
-                      <h1>Amazing Modal</h1>
-                      <h2>Pure Vanilla JavaScript</h2>
-                      <button class="modal-close modal-exit">X</button>
+                        <h1>Add New Book</h1>
+                        <form onsubmit="handleSubmit(); return false">
+                            <label for="title">Title</label>
+                            <input type="text" id="title" name="title" placeholder="Harry Potter">
+                            <label for="author">Author</label>
+                            <input type="text" id="author" name="author" placeholder="JK Rowling">
+                            <label for="pages">Number of Pages</label>
+                            <input type="number" id="pages" name="pages" placeholder="100">
+                            <label for="read">Have you read the book?</label>
+                            <input type="checkbox" id="read" name="read" checked>
+                            <input type="submit" value="Submit">
+                        </form>
+                        <button class="modal-close modal-exit">X</button>
                     </div>
                 </div>
             </div>
