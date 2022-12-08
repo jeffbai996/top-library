@@ -20,6 +20,22 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+// function to handle book display
+function displayBooks() {
+  const bookList = document.getElementById("book-list-container");
+  bookList.innerHTML = "";
+
+  myLibrary.forEach((book, index) =>{
+    let bookCard = document.createElement("div");
+    bookCard.innerHTML = `
+      <div>${book.title}, by ${book.author}, ${book.pages} pages, ${book.read ? "Read" : "Not Read"}</div>
+      <button onclick="removeBook(${index})">Remove</button>
+      <button onclick="toggleReadStatus(${index})">Toggle Read Status</button>
+      `;
+    bookList.appendChild(bookCard);
+  });
+}
+
 // function to handle form submission
 function handleSubmit() {
     title = document.getElementById("title").value;
