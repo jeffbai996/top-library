@@ -20,6 +20,12 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+// remove a book from myLibrary array
+function removeBook(index) {
+  myLibrary.splice(index, 1);
+  displayBooks();
+}
+
 // function to handle book display
 function displayBooks() {
   const bookList = document.getElementById("book-list-container");
