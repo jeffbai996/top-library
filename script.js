@@ -60,9 +60,6 @@ document.getElementById("new-book").addEventListener("click", () => {
   displayBooks();
 });
 
-// get book-list container
-const bookList = document.getElementById("book-list-container")
-
 // function to update book list element with each submit
 function printBooks() {
     bookList.innerHTML = ""; 
