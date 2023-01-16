@@ -41,6 +41,7 @@ body {
 
 #main-content {
   flex: 3;
+  padding: 20px;
 }
 
 #header {
