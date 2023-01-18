@@ -120,6 +120,8 @@ button:nth-child(3) {
   background: #fff;
   position: relative;
   padding: 30px;
+  max-width: 500px;
+  width: 80%;
 }
 
 .modal-close {
