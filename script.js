@@ -1,12 +1,6 @@
 // create array for book objects
 let myLibrary = [];
 
-// create 2 placeholder books to populate array
-let book1 = new Book("The Hunger Games", "Suzanne Collins", "374", false);
-addBookToLibrary(book1);
-let book2 = new Book("Harry Potter and the Order of the Phoenix", "J.K. Rowling", "870", false)
-addBookToLibrary(book2);
-
 // constructor
 function Book(title, author, pages, read) {
     this.title = title;
@@ -60,17 +54,9 @@ document.getElementById("new-book").addEventListener("click", () => {
   displayBooks();
 });
 
-// function to update book list element with each submit
-function printBooks() {
-    bookList.innerHTML = ""; 
-    myLibrary.forEach((book) => {
-        let html = `<div>${book.title}, by ${book.author}, ${book.pages} pages, ${book.read}</div>`;
-        bookList.innerHTML += html;
-    })
-}
 
 // print placeholder books
-printBooks();
+displayBooks();
 
 //modal handling
 const modals = document.querySelectorAll('[data-modal]');
