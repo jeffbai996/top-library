@@ -31,6 +31,9 @@ function handleSubmit() {
     addBookToLibrary(newBook);
 
     printBooks();
+
+    // const modals = document.querySelectorAll('[data-modal]');
+    // modals.classList.remove("open");
 }
 
 // get book-list container
