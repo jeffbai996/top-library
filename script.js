@@ -37,6 +37,15 @@ function closeModal() {
   modal.classList.remove("open");
 }
 
+// get modal exits and add listener
+const modalExits = document.querySelectorAll(".modal-exit");
+modalExits.forEach((exit) => {
+  exit.addEventListener("click", (event) => {
+    event.preventDefault();
+    closeModal();
+  })
+})
+
 // remove a book from myLibrary array
 function removeBook(index) {
   myLibrary.splice(index, 1);
