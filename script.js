@@ -31,6 +31,12 @@ bookForm.addEventListener("submit", (e) => {
   closeModal();
 })
 
+// close the modal
+function closeModal() {
+  const modal = document.getElementById("modal-one");
+  modal.classList.remove("open");
+}
+
 // remove a book from myLibrary array
 function removeBook(index) {
   myLibrary.splice(index, 1);
