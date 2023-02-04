@@ -58,5 +58,12 @@ function toggleReadStatus(index) {
   displayBooks();
 }
 
+// create example books
+const book1 = new Book("The Hunger Games", "Suzanne Collins", 374, false);
+const book2 = new Book("Harry Potter and the Order of the Phoenix", "J.K. Rowling", 870, false);
+
+addBookToLibrary(book1);
+addBookToLibrary(book2);
+
 // print placeholder books
 displayBooks();
