@@ -14,6 +14,21 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+// display books to main page
+function displayBooks() {
+  bookList.innerHTML = "";
+  myLibrary.forEach((book, index) => {
+      const bookDiv = document.createElement("div");
+      bookDiv.innerHTML = `
+          <div>${book.title}, by ${book.author}, ${book.pages} pages, ${book.read ? "Read" : "Not read"}</div>
+          <button onclick="removeBook(${index})">Remove</button>
+          <button onclick="toggleReadStatus(${index})">Toggle Read</button>
+      `;
+      bookList.appendChild(bookDiv);
+  });
+}
+
+
 // modal handling code (attempt 2)
 const bookForm = document.getElementById("book-form");
 bookForm.addEventListener("submit", (e) => {
