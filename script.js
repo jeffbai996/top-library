@@ -1,6 +1,9 @@
 // create array for book objects
 let myLibrary = [];
 
+// function to get bookList
+const bookList = document.getElementById("book-list");
+
 // constructor
 function Book(title, author, pages, read) {
     this.title = title;
@@ -28,7 +31,6 @@ function displayBooks() {
   });
 }
 
-
 // modal handling code (attempt 2)
 const bookForm = document.getElementById("book-form");
 bookForm.addEventListener("submit", (e) => {
@@ -44,6 +46,13 @@ bookForm.addEventListener("submit", (e) => {
   displayBooks();
 
   closeModal();
+})
+
+// open the modal (event listener bound to "Add New Book" button)
+const newBookButton = document.getElementById("new-book");
+newBookButton.addEventListener("click", () => {
+  const modal = document.getElementById("modal-one");
+  modal.classList.add("open");
 })
 
 // close the modal
