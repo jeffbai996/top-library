@@ -48,21 +48,17 @@ function displayBooks() {
   });
 }
 
-// function to handle form submission
-function handleSubmit() {
-    title = document.getElementById("title").value;
-    author = document.getElementById("author").value;
-    pages = document.getElementById("pages").value;
-    read = document.getElementById("read").value;
+// event listener to handle book additions
+document.getElementById("new-book").addEventListener("click", () => {
+  const title = prompt("Enter the book title:");
+  const author = prompt("Enter the author:");
+  const pages = parseInt(prompt("Enter the number of pages:"));
+  const read = confirm("Have you read the book?");
 
-    newBook = new Book(title, author, pages, read);
-    addBookToLibrary(newBook);
-
-    printBooks();
-
-    // const modals = document.querySelectorAll('[data-modal]');
-    // modals.classList.remove("open");
-}
+  const newBook = new Book(title, author, pages, read);
+  addBookToLibrary(newBook);
+  displayBooks();
+});
 
 // get book-list container
 const bookList = document.getElementById("book-list-container")
