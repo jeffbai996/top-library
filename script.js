@@ -26,6 +26,12 @@ function removeBook(index) {
   displayBooks();
 }
 
+// toggle read status
+function toggleReadStatus(index) {
+  myLibrary[index].read = !myLibrary[index].read;
+  displayBooks();
+}
+
 // function to handle book display
 function displayBooks() {
   const bookList = document.getElementById("book-list-container");
