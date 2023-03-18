@@ -14,6 +14,23 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
+// modal handling code (attempt 2)
+const bookForm = document.getElementById("book-form");
+bookForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const read = document.getElementById("read").checked;
+
+  const newBook = new Book(title, author, pages, read);
+  addBookToLibrary(newBook);
+
+  displayBooks();
+
+  closeModal();
+})
+
 // remove a book from myLibrary array
 function removeBook(index) {
   myLibrary.splice(index, 1);
@@ -24,22 +41,6 @@ function removeBook(index) {
 function toggleReadStatus(index) {
   myLibrary[index].read = !myLibrary[index].read;
   displayBooks();
-}
-
-// function to handle book display
-function displayBooks() {
-  const bookList = document.getElementById("book-list-container");
-  bookList.innerHTML = "";
-
-  myLibrary.forEach((book, index) =>{
-    let bookCard = document.createElement("div");
-    bookCard.innerHTML = `
-      <div>${book.title}, by ${book.author}, ${book.pages} pages, ${book.read ? "Read" : "Not Read"}</div>
-      <button onclick="removeBook(${index})">Remove</button>
-      <button onclick="toggleReadStatus(${index})">Toggle Read Status</button>
-      `;
-    bookList.appendChild(bookCard);
-  });
 }
 
 // event listener to handle book additions
