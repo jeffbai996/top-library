@@ -50,40 +50,46 @@ body {
 }
 
 
-#book-list-container {
+#book-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-gap: 20px;
 }
 
-#book-list-container > div {
-  background-color: #ecf0f1;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.book-cell {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#book-list-container > div > div {
-  margin-bottom: 10px;
+.book-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
 }
+
 
 button {
-  padding: 5px 10px;
-  margin-right: 5px;
+  background-color: #04AA6D;
+  color: white;
+  padding: 8px 16px;
   border: none;
-  border-radius: 3px;
-  font-size: 14px;
+  border-radius: 4px;
   cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  transition-duration: 0.4s;
 }
 
-button:nth-child(2) {
-  background-color: #e74c3c;
-  color: #ffffff;
-}
-
-button:nth-child(3) {
-  background-color: #9b59b6;
-  color: #ffffff;
+button:hover {
+  background-color: #45a049;
 }
 
 .modal {

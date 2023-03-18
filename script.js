@@ -21,13 +21,19 @@ function addBookToLibrary(book) {
 function displayBooks() {
   bookList.innerHTML = "";
   myLibrary.forEach((book, index) => {
-      const bookDiv = document.createElement("div");
-      bookDiv.innerHTML = `
-          <div>${book.title}, by ${book.author}, ${book.pages} pages, ${book.read ? "Read" : "Not read"}</div>
-          <button onclick="removeBook(${index})">Remove</button>
-          <button onclick="toggleReadStatus(${index})">Toggle Read</button>
+      const bookCell = document.createElement("div");
+      bookCell.classList.add("book-cell");
+      bookCell.innerHTML = `
+          <div><strong>Title:</strong> ${book.title}</div>
+          <div><strong>Author:</strong> ${book.author}</div>
+          <div><strong>Pages:</strong> ${book.pages}</div>
+          <div><strong>Read:</strong> ${book.read ? "Yes" : "No"}</div>
+          <div class="book-buttons">
+              <button onclick="removeBook(${index})">Remove</button>
+              <button onclick="toggleReadStatus(${index})">Toggle Read</button>
+          </div>
       `;
-      bookList.appendChild(bookDiv);
+      bookList.appendChild(bookCell);
   });
 }
 
