@@ -31,6 +31,11 @@ function displayBooks() {
   });
 }
 
+// validate form inputs
+function isValidInput(title, author, pages) {
+  return title.trim() !== "" && author.trim() !== "" && pages.trim() !== "";
+}
+
 // modal handling code (attempt 2)
 const bookForm = document.getElementById("book-form");
 bookForm.addEventListener("submit", (e) => {
@@ -40,13 +45,15 @@ bookForm.addEventListener("submit", (e) => {
   const pages = document.getElementById("pages").value;
   const read = document.getElementById("read").checked;
 
-  const newBook = new Book(title, author, pages, read);
-  addBookToLibrary(newBook);
-
-  displayBooks();
-
-  closeModal();
-})
+  if (isValidInput(title, author, pages)) {
+    const newBook = new Book(title, author, pages, read);
+    addBookToLibrary(newBook);
+    displayBooks();
+    closeModal();
+  } else {
+    alert ("Please fill out all fields.");
+  }
+});
 
 // open the modal (event listener bound to "Add New Book" button)
 const newBookButton = document.getElementById("new-book");
