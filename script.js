@@ -55,6 +55,7 @@ bookForm.addEventListener("submit", (e) => {
     const newBook = new Book(title, author, pages, read);
     addBookToLibrary(newBook);
     displayBooks();
+    bookForm.reset();
     closeModal();
   } else {
     alert ("Please fill out all fields.");
