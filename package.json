@@ -1,0 +1,9 @@
+{
+  "name": "top-library",
+  "version": "1.0.0",
+  "description": "Library project from The Odin Project",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "license": "MIT"
+}
